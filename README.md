@@ -10,5 +10,6 @@ julia> feed_veas()
 To add the package run 
 ```julia
 julia> using Pkg
+julia> Pkg.add(PackageSpec(name="UnicodePlots", rev="master"))
 julia> Pkg.add(PackageSpec(url="https://github.com/MrUrq/VeryEfficientAlimentSelector.jl.git"))
 ```
