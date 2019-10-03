@@ -9,6 +9,6 @@ julia> feed_veas()
 
 To add the package run 
 ```julia
-julia> import Pkg
-julia> Pkg.add("https://github.com/MrUrq/VeryEfficientAlimentSelector.jl.git")
+julia> using Pkg
+julia> Pkg.add(PackageSpec(url="https://github.com/MrUrq/VeryEfficientAlimentSelector.jl.git"))
 ```
