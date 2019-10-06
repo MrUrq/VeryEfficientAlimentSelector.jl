@@ -1,7 +1,7 @@
 function get_menu(place::T) where T <: Restaurant end
 
 
-function week(place::Traktör,html)
+function cur_week(place::Traktör,html)
     qs = eachmatch(Selector("div.elementor-text-editor"),html.root)[2]
 
     #Current week
@@ -56,10 +56,10 @@ function get_menu(place::Traktör, cur_day)
     body = String(res.body)
     html = parsehtml(body)
 
-    return week(place,html), menu_of_day(place,html,cur_day), standing_menu(place,html)
+    return cur_week(place,html), menu_of_day(place,html,cur_day), standing_menu(place,html)
 end
 
-function week(place::Wijkanders,cur_date)
+function cur_week(place::Wijkanders,cur_date)
     "DAGENS LUNCH V "*string(week(cur_date))
 end
 
@@ -101,5 +101,5 @@ function get_menu(place::Wijkanders, cur_date)
     body = String(res.body)
     html = parsehtml(body)
 
-    return week(place,cur_date), menu_of_day(place,html,cur_date)
+    return cur_week(place,cur_date), menu_of_day(place,html,cur_date)
 end
