@@ -1,11 +1,18 @@
 # VeryEfficientAlimentSelector.jl
 Julia package for feeding the indecisive PhD students at VEAS.
-Simply run the below command for a list of Chalmers Johanneberg 
+Simply run the below command for a randomly sorted list of Chalmers Johanneberg 
 campus related food options.  
 
 ```julia
 julia> feed_veas()
 ```
+
+To see available options for another date run
+```julia
+julia> using Dates
+julia> print_menus(DateTime(2019,10,7)) #year,month,day
+```
+
 
 To add the package run 
 ```julia
