@@ -4,6 +4,7 @@ Simply run the below command for a randomly sorted list of Chalmers Johanneberg
 campus related food options.  
 
 ```julia
+julia> using VeryEfficientAlimentSelector
 julia> feed_veas()
 ```
 
