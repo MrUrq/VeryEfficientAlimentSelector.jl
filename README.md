@@ -11,7 +11,7 @@ julia> feed_veas()
 To see available options for another date run
 ```julia
 julia> using Dates
-julia> print_menus(DateTime(2019,10,7)) #year,month,day
+julia> print_menus(Date(2019,10,7)) #year,month,day
 ```
 
 

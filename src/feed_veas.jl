@@ -1,23 +1,23 @@
 function feed_veas()
 
-    suffled_places = shuffle(places)
+    shuffled_places = shuffle(places)
 
     run(`clear`);
-    print_menus(DateTime(now()))
+    print_menus(Date(now()),shuffled_places)
 
-    fig_path = joinpath(dirname(pathof(VeryEfficientAlimentSelector)), "../pictures", lowercase(replace(suffled_places[1].name, " " => ""))*".jpg")
+    fig_path = joinpath(dirname(pathof(VeryEfficientAlimentSelector)), "../pictures", lowercase(replace(shuffled_places[1].name, " " => ""))*".jpg")
     img = load(fig_path)
     out = heatmap(reverse(img,dims=1); height=35, border=:none, labels=false)
 
     display(out)
 end
 
-function print_menus(cur_time=now())
+function print_menus(cur_time=Date(now()),places=places)
     @printf "Menu for week %.0f\n" Dates.week(cur_time)
     for (i, place) in enumerate(places)
         @printf "Choise %-3.0f %s \n" i place.name
         
-        print_menu(place, DateTime(cur_time))
+        print_menu(place, Date(cur_time))
     end
 end
 

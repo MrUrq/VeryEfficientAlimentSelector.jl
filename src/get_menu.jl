@@ -87,7 +87,7 @@ function menu_of_day(place::Wijkanders,html,cur_date)
         date_vals = parse.(Int, split(found_day[end],"/"))
         
         # See if the found menu is for today or future
-        if DateTime(Dates.year(now()),reverse(date_vals)...) == cur_date
+        if Date(Dates.year(now()),reverse(date_vals)...) == cur_date
             day_idx=tmp_day_idx[i]
             return menu[day_idx:(day_idx+6)]
         end
