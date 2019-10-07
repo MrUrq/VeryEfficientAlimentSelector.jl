@@ -28,7 +28,9 @@ function print_menu(place::Traktör, cur_date)
     try 
         menu = get_menu(place, dayofweek(cur_date))
         week_nr = parse(Int,match(r"[0-9].",menu[1]).match)
-        @assert week_nr == week(cur_date) #Make sure menu for correct date could be found
+        
+        #This does not work sometimes when Traktör forget to update the menu
+        #@assert week_nr == week(cur_date) #Make sure menu for correct date could be found
         
         @printf "\t %s \n" menu[1]
         @printf "\t\t %s \n" menu[2]
